@@ -2,14 +2,14 @@ import os
 import random
 import argparse
 import numpy as np
-
+import torch
 import albumentations as A
 import cv2
 
-def get_arguments():
+def get_arguments( 	):
     parser = argparse.ArgumentParser(description='Image Augmentation')
-    parser.add_argument('--root_dir', default='dataset-resized/', type=str)
-    parser.add_argument('--save_dir', default='augmented/', type=str)
+    parser.add_argument('--root_dir', default='C:\\ai\\data\\dataset-resized', type=str)
+    parser.add_argument('--save_dir', default='augmented', type=str)
     parser.add_argument('--probability', default='low', help='low, mid, high; probability of applying the transform')
     parser.add_argument('--seed', default=1234, type=int, help='seed for randomize')
     return parser.parse_args()
